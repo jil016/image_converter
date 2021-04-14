@@ -20,6 +20,7 @@ public:
     std::string out_topic;
     nh_.getParam("/to_rgb8/in_topic", in_topic); 
     nh_.getParam("/to_rgb8/out_topic", out_topic); 
+    ROS_INFO_STREAM("IMAGE CONVERTER \n input topic: " << in_topic << " output topic: " << out_topic);
 
     image_sub_ = it_.subscribe(in_topic, 1,
       &ImageConverter::imageCb, this);
